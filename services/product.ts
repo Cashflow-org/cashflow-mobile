@@ -8,6 +8,6 @@ export interface Product {
   }
 
     export const getAllProducts = async (): Promise<Product[]> => {
-      const response = await axios.get<Product[]>('http://localhost:3000/product');
+      const response = await axios.get<Product[]>('http://localhost:3000/products');
       return (response.data);
     }

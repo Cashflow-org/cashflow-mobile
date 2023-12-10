@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         gap: 10,
         padding: 8,
         color: 'white',
+        minHeight: 68,
       },
       productContainer: {
         display: 'flex',
@@ -34,6 +35,13 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: 'white',
+      },
+      plusContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       productCounterContainer: {
         display: 'flex',

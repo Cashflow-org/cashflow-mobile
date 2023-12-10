@@ -1,18 +1,27 @@
 import { Modal, StyleSheet } from "react-native";
 
 import { Text, View } from "../../components/Themed";
+import { FC } from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function AddProductModal() {
+interface AddProductModalProps {
+  handleClose: () => void;
+}
+
+ const AddProductModal: FC<AddProductModalProps> = ({handleClose}) => {
   return (
-    <Modal animationType="slide" transparent={true} visible={true}>
       <View style={styles.ModalView}>
         <View style={styles.centeredView}>
           <Text>test</Text>
+          <TouchableOpacity onPress={handleClose}>
+            <Text>close</Text>
+          </TouchableOpacity>
         </View>
       </View>
-    </Modal>
   );
 }
+
+export default AddProductModal;
 
 const styles = StyleSheet.create({
   ModalView: {
