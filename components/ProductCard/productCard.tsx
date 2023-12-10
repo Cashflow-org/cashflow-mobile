@@ -4,34 +4,33 @@ import { styles } from "./style";
 import { FC } from "react";
 
 interface ProductCardProps {
-    name: string;
-    count: number;
-    price: number;
-    imgUrl: string;
+  name: string;
+  count?: number;
+  price: number;
+  imgUrl: string;
 }
 
-const ProductCard: FC<ProductCardProps> = ({price, count, name, imgUrl}) => {
-    const CapitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+const ProductCard: FC<ProductCardProps> = ({ price, count, name, imgUrl }) => {
+  const CapitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <>
       <View style={styles.product}>
         <View>
-          <Image
-            source={{uri: imgUrl}}
-            style={styles.productImage}
-          ></Image>
+          <Image source={{ uri: imgUrl }} style={styles.productImage}></Image>
         </View>
         <View style={styles.productContainer}>
           <View style={styles.productContent}>
             <Text style={styles.text}>{CapitalizedName}</Text>
-            <XCircle width="16px" color="white" />
+            {count && <XCircle width="16px" color="white" />}
           </View>
           <View style={styles.productContent}>
-            <View style={styles.productCounterContainer}>
-              <Text style={styles.text}>-</Text>
-              <Text style={styles.text}>{count}</Text>
-              <Text style={styles.text}>+</Text>
-            </View>
+            {count && (
+              <View style={styles.productCounterContainer}>
+                <Text style={styles.text}>-</Text>
+                <Text style={styles.text}>{count}</Text>
+                <Text style={styles.text}>+</Text>
+              </View>
+            )}
             <Text style={styles.text}>R${price.toFixed(2)}</Text>
           </View>
         </View>
