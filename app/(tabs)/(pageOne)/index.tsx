@@ -5,7 +5,6 @@ import { styles } from "./style";
 import ProductCard from "../../../components/ProductCard/productCard";
 import AddProductModal from "../../(modals)/addProductModal";
 import { Modal } from "react-native";
-import { PlusCircle } from "react-native-feather";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function TabOneScreen() {
